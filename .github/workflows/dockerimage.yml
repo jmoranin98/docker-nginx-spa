@@ -15,10 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag resep98/nginx-spa-minimal:latest
-    - name: Publish the Docker image
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: docker/build-push-action@v1
       with:
-        name: resep98/nginx-spa-minimal:latest
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: resep98/nginx-spa-minimal
+        tags: latest
