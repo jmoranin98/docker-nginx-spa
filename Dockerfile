@@ -9,3 +9,5 @@ COPY expires.conf /etc/nginx/conf.d/expires.conf
 RUN mkdir /app
 
 RUN echo "<code>Add your index.html to /app: COPY index.html /app/index.html</code>" > /app/index.html
+
+CMD ["nginx"]
